@@ -1,4 +1,4 @@
-# --------------
+# -------rishirajcode-------
 from csv import reader
 
 def explore_data(dataset, start, end, rows_and_columns=False):
@@ -17,7 +17,7 @@ def explore_data(dataset, start, end, rows_and_columns=False):
     dataset_slice = dataset[start:end]    
     for row in dataset_slice:
         print(row)
-        print('\n') # adds a new (empty) line between rows
+        print('\n') 
         
     if rows_and_columns:
         print('Number of rows:', len(dataset))
@@ -119,14 +119,10 @@ movies = list(read_file)
 movies_header = movies[0]
 print("Movies Header:\n", movies_header)
 
-# Subset the movies dataset such that the header is removed from the list and store it back in movies
 movies = movies[1:]
 
 
 
-# Delete wrong data
-# Explore the row #4553. You will see that as apart from the id, description, status and title, no other information is available.
-# Hence drop this row.
 
 print("Entry at index 4553:")
 explore_data(movies, 4553, 4554)
@@ -136,19 +132,15 @@ del movies[4553]
 
 
 
-# Using explore_data() with appropriate parameters, view the details of the first 5 movies.
 print("First 5 Entries:")
 explore_data(movies, 0, 5, True)
 
 
 
-# Our dataset might have more than one entry for a movie. Call duplicate_and_unique_movies() with index of the name to check the same.
 
 duplicate_and_unique_movies(movies, 13)
 
 
-# We saw that there are 3 movies for which the there are multiple entries. 
-# Create a dictionary, 'reviews_max' that will have the name of the movie as key, and the maximum number of reviews as values.
 
 reviews_max = {}
 
@@ -164,7 +156,6 @@ for movie in movies:
         
 len(reviews_max)
 
-# Create a list 'movies_clean', which will filter out the duplicate movies and contain the rows with maximum number of reviews for duplicate movies, as stored in 'review_max'. 
 
 movies_clean = []
 already_added = []
